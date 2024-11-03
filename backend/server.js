@@ -1,18 +1,19 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./config/db');
 const tutorRoutes = require('./routes/tutorRoutes');
-
+const attendanceRoutes = require('./routes/attendanceRoutes');
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use('/api/tutors', tutorRoutes);
+app.use('/api/attendance', attendanceRoutes);
 
-// Sample route to test server
-app.get('/', (req, res) => {
-    res.send('Mathe Helpdesk API is running');
+
+// Add this at the top of server.js after app is initialized
+app.get('/api/test', (req, res) => {
+    res.send('Test route is working');
 });
 
 const PORT = process.env.PORT || 5000;

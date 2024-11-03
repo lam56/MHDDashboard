@@ -1,18 +1,29 @@
+// frontend/src/App.js
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import TeamDashboard from './components/TeamDashboard';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import TeamPerformance from './pages/TeamPerformance';
+import ProjectPerformance from './pages/ProjectPerformance';
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header bg-dark text-white p-4">
-                <div className="container">
-                    <h1 className="text-center">Math Helpdesk Dashboard</h1>
-                    <TeamDashboard />
-                </div>
-            </header>
-        </div>
+        <BrowserRouter>
+            <div className="App">
+                <header className="App-header">
+                    <h1>Math Helpdesk Dashboard</h1>
+                    <nav>
+                        <Link to="/team-performance" className="nav-link">Team Performance</Link>
+                        <Link to="/project-performance" className="nav-link">Project Performance</Link>
+                    </nav>
+                </header>
+
+                <main>
+                    <Routes>
+                        <Route path="/team-performance" element={<TeamPerformance />} />
+                        <Route path="/project-performance" element={<ProjectPerformance />} />
+                    </Routes>
+                </main>
+            </div>
+        </BrowserRouter>
     );
 }
 
