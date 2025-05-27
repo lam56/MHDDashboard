@@ -72,7 +72,7 @@ const TutorOverview = () => {
                     </TableHead>
                     <TableBody>
                         {tutors.map((tutor, index) => {
-                            const progress = Math.round((tutor.actual / tutor.target) * 100);
+                            const progress = Math.round((tutor.totalWorked / tutor.totalTarget) * 100);
                             const status = progress >= 100 ? "🟢 Ahead" : progress >= 70 ? "🟡 OK" : "🔴 Behind";
 
                             return (
