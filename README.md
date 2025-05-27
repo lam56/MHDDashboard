@@ -1,4 +1,4 @@
-# MHDDashboard
+# MatheBoard
 Projektarbeit
 
 ## 1. **Team Performance Section**
