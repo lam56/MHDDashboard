@@ -2,10 +2,31 @@ const db = require("../config/db");
 
 exports.addWorkHours = (tutorId, date, hours) => {
     return new Promise((resolve, reject) => {
-        const sql = "INSERT INTO work_hours (tutor_id, date, hours_worked) VALUES (?, ?, ?)";
-        db.query(sql, [tutorId, date, hours], (err) => {
+        // Step 1: Check if the date is within the tutor's contract period
+        const checkContractSql = `
+            SELECT 1 FROM contracts 
+            WHERE tutor_id = ? 
+              AND ? BETWEEN start_date AND end_date
+            LIMIT 1
+        `;
+
+        db.query(checkContractSql, [tutorId, date], (err, results) => {
             if (err) return reject(err);
-            resolve();
+
+            if (results.length === 0) {
+                return reject(new Error("Date is outside the active contract period."));
+            }
+
+            // Step 2: Insert work hours if contract is valid
+            const insertSql = `
+                INSERT INTO work_hours (tutor_id, date, hours_worked)
+                VALUES (?, ?, ?)
+            `;
+
+            db.query(insertSql, [tutorId, date, hours], (insertErr) => {
+                if (insertErr) return reject(insertErr);
+                resolve();
+            });
         });
     });
 };
