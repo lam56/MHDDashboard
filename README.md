@@ -58,7 +58,7 @@ Stelle sicher, dass die Datenbank `mathe_helpdesk` bereits existiert und der MyS
 cd backend
 npm install
 cp .env.template .env
-# Trage deine MySQL-Zugangsdaten und ein JWT_SECRET in die .env-Datei ein
+##### Trage deine MySQL-Zugangsdaten und ein JWT_SECRET in die .env-Datei ein
 node server.js
 
 Der Backend-Server läuft unter:
