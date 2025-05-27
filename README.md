@@ -55,9 +55,25 @@ Stelle sicher, dass die Datenbank `mathe_helpdesk` bereits existiert und der MyS
 
 ### 🔹 Backend starten
 
-```bash
 cd backend
 npm install
 cp .env.template .env
 # Trage deine MySQL-Zugangsdaten und ein JWT_SECRET in die .env-Datei ein
 node server.js
+
+Der Backend-Server läuft unter:
+📍 http://localhost:5000
+
+---
+
+### 🔹 Frontend starten
+
+cd frontend
+npm install
+npm start
+
+Die React-Anwendung ist erreichbar unter:
+🌐 http://localhost:3000
+
+Sie kommuniziert automatisch mit dem Backend (API unter Port 5000).
+Stelle sicher, dass das Backend vor dem Start des Frontends ausgeführt wird.
