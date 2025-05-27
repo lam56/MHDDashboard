@@ -1,39 +1,63 @@
-# MatheBoard
-Projektarbeit
+# 📚 MatheBoard – Projektarbeit
 
-## 1. **Team Performance Section**
+MatheBoard ist ein rollenbasiertes Dashboard-System zur Unterstützung der Arbeitszeiterfassung, Anwesenheitsdokumentation und Verwaltung von Tutoren in Bildungseinrichtungen. Es ermöglicht sowohl Tutoren als auch Administratoren eine übersichtliche und datengetriebene Darstellung relevanter Informationen.
 
-   
-### A. Hours Worked vs. Target:
+---
 
-Weekly Hours Chart: A bar chart or line chart showing the hours worked by each tutor each week compared to their target hours. Color code any deviation (e.g., red for underperformance, green for overperformance).
-Deviation Indicator: An indicator (like a progress bar) for each tutor to show if they are meeting their target hours. This can be calculated as (Actual Hours - Target Hours).
-Average Hours per Tutor: Display the average weekly hours worked across all tutors to get a team-wide view
+## 🔧 Verwendete Technologien
 
-### B. Attendance and Leave Tracking:
+- **Frontend**: React, FullCalendar, Axios, MUI (Material UI)
+- **Backend**: Node.js, Express.js
+- **Datenbank**: MySQL
+- **Authentifizierung**: JWT-basierte Token-Authentifizierung
 
-Monthly Attendance Calendar: Display a calendar where each tutor’s attendance, vacations, or leaves are logged. Use different colors for attendance, sick leave, and vacation.
-Leave Summary Table: A table that aggregates leave days for each tutor, showing the total vacation, sick days, and other leave types over the semester.
+---
 
-2. ## **Project Performance Section**
+## 🚀 Funktionsübersicht
 
-### A. Daily Student Attendance:
+### 🎓 Tutor Dashboard
 
-Daily Attendance Trends: A line or area chart showing daily student attendance at the helpdesk, with a trend line to visualize attendance patterns over time.
-Weekly Attendance Summary: A weekly summary table or graph that compares attendance week-over-week to identify any trends.
+- Erfassung täglicher **Arbeitsstunden** und **Anwesenheiten**
+- Einsicht in persönliche **Statistiken und Fortschritte**
+- Anzeige von **Team-Kalender-Events**
+- Verwaltung des eigenen **Profils und Passworts**
+- Anzeige der **durchschnittlich notwendigen Wochenstunden** zur Vertragserfüllung
 
-### B. Tutor Schedule and Availability:
+### 🛠 Admin Dashboard
 
-Weekly Schedule Overview: A Gantt chart or heatmap to show each tutor’s availability. This could help identify coverage gaps and schedule balance.
-Availability Summary Table: A table showing the weekly availability hours of each tutor. This could also include a count of the “hours available” vs. “hours worked.”
+- Verwaltung aller **Nutzer und Verträge**
+- Überblick über **Team-Statistiken pro Monat**
+- Analyse von **Anwesenheitstrends** nach Thema und Datum
+- Erstellung und Verwaltung von **Kalender-Events**
+- Visualisierung von **Stoßzeiten** mithilfe von Diagrammen
 
-### ??C. Publicity Tracking:
+---
 
-Promotion Impact Analysis: A comparison chart that shows the attendance data before and after each promotion to analyze its impact.
-Promotion Log Table: A log of all promotional activities (e.g., in-classroom announcements), with columns for the date, the type of promotion, and any notes on outcomes or impacts.
+## 🗃️ Datenbank-Setup
 
-### ?D. End-of-Semester Review Sessions:
+Führe das SQL-Skript `mathe_helpdesk_installationsskript.sql` in deiner MySQL-Datenbank aus, um:
 
-Topic-Specific Attendance: A bar chart showing attendance for each review session topic. This will provide insight into which topics had the highest attendance and engagement.
-Session Details Table: A detailed table listing each session, with columns for date, tutor leading the session, topic, and attendance numbers.
+- Alle erforderlichen Tabellen anzulegen (`users`, `contracts`, `work_hours`, `attendance`, `events`)
+- Beispiel-Nutzer, Verträge und Arbeitsstunden einzufügen
 
+Stelle sicher, dass die Datenbank `mathe_helpdesk` bereits existiert und der MySQL-Server läuft.
+
+---
+
+## ▶️ Projektstart & Einrichtung
+
+### 🔹 Voraussetzungen
+
+- Node.js & npm
+- Lokale MySQL-Datenbank
+
+---
+
+### 🔹 Backend starten
+
+```bash
+cd backend
+npm install
+cp .env.template .env
+# Trage deine MySQL-Zugangsdaten und ein JWT_SECRET in die .env-Datei ein
+node server.js
