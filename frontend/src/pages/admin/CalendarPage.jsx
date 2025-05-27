@@ -84,9 +84,9 @@ const CalendarPage = () => {
                     </button>
                     <div>📝 How to use this calendar:</div>
                     <ul>
-                        <li><strong>Create an event:</strong> Click on any day to add a new event</li>
-                        <li><strong>Multiple events:</strong> You can create multiple events on the same day</li>
-                        <li><strong>Delete an event:</strong> Click on an existing event to delete it</li>
+                        <li><strong>Create an event:</strong>  Click on any day to add a new event. To create a multi-day event, click and drag across the desired dates.</li>
+                        <li><strong>Multiple events:</strong> You can create multiple events on the same day.</li>
+                        <li><strong>Delete an event:</strong> Click on an existing event to delete it.</li>
                     </ul>
                 </div>
             )}
