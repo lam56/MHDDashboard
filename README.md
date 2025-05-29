@@ -20,7 +20,7 @@ MatheBoard ist ein rollenbasiertes Dashboard-System zur Unterstützung der Arbei
 - Erfassung täglicher **Arbeitsstunden** und **Anwesenheiten**
 - Einsicht in persönliche **Statistiken und Fortschritte**
 - Anzeige von **Team-Kalender-Events**
-- Verwaltung des eigenen **Profils und Passworts**
+- Verwaltung des eigenen **Profils**
 - Anzeige der **durchschnittlich notwendigen Wochenstunden** zur Vertragserfüllung
 
 ### 🛠 Admin Dashboard
